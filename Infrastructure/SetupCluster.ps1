@@ -17,7 +17,7 @@ az provider register -n Microsoft.ContainerService
 
 ### setup kubernetes cluster
 az group create -n "$ressourcegroup" -l "westeurope"
-az aks create --resource-group $ressourcegroup --name $clustername --node-vm-size Standard_DS1_v2 --node-count 1 --generate-ssh-keys
+az aks create --resource-group $ressourcegroup --name $clustername --node-vm-size Standard_B2s --node-count 1 --generate-ssh-keys
 az aks get-credentials --resource-group $ressourcegroup --name $clustername
 az acr create --name $containerregistry --resource-group $ressourcegroup --sku Basic
 az acr update -n $containerregistry --admin-enabled true
